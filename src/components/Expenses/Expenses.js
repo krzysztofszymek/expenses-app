@@ -1,17 +1,23 @@
-import ExpenseItem from "./ExpenseItem/ExpenseItem";
-import ExpensesData from "./ExpensesData/ExpensesData";
-import Card from "../UI/Card/Card";
 import './Expenses.scss';
+import { useState } from "react";
+import ExpenseItem from "./ExpenseItem/ExpenseItem";
+import ExpensesFilter from "./ExpenseFilter/ExpenseFilter";
+import Card from "../UI/Card/Card";
 
-function Expenses() {
+function Expenses(props) {
+    const data = props.data;
+    
+    const [filter, setFilter] = useState('2022');
+
     return (
         <Card className="expenses">
-            {ExpensesData.map((data) => (
+            <ExpensesFilter selected={filter} onSetFilter={setFilter}/>
+            {data.map((item) => (
                 <ExpenseItem
-                    key={data.id}
-                    title={data.title}
-                    amount={data.amount}
-                    date={data.date} />
+                    key={item.id}
+                    title={item.title}
+                    amount={item.amount}
+                    date={item.date} />
             ))}
         </Card>
     );
