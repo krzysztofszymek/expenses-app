@@ -12,6 +12,7 @@ function ExpenseItem(props) {
                     {props.amount}
                 </div>
             </div>
+            <button>Change title</button>
         </Card>
     );
 }
