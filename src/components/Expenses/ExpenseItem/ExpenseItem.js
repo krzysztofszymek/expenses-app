@@ -4,16 +4,18 @@ import './ExpenseItem.scss';
 
 function ExpenseItem(props) {
     return (
-        <Card className="expense-item">
-            <ExpenseDate date={props.date}/>
-            <div className="description">
-                <h2>{props.title}</h2>
-                <div className="price">
-                    {props.amount}
+        <li>
+            <Card className="expense-item">
+                <ExpenseDate date={props.date}/>
+                <div className="description">
+                    <h2>{props.title}</h2>
+                    <div className="price">
+                        {props.amount}
+                    </div>
                 </div>
-            </div>
-            <button>Change title</button>
-        </Card>
+                <button>Change title</button>
+            </Card>
+        </li>
     );
 }
 

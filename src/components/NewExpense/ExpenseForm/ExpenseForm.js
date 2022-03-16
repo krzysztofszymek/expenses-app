@@ -63,7 +63,8 @@ function ExpenseForm(props) {
                 </div>
             </div>
             <div className="actions">
-                <button stype='submit'>Add Expense</button>
+                <button type="button" onClick={props.onHideForm}>Cancel</button>
+                <button type='submit'>Add Expense</button>
             </div>
         </form>
     );
