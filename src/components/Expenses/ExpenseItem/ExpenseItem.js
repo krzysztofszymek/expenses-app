@@ -10,10 +10,9 @@ function ExpenseItem(props) {
                 <div className="description">
                     <h2>{props.title}</h2>
                     <div className="price">
-                        {props.amount}
+                        {props.amount + ' $'}
                     </div>
                 </div>
-                <button>Change title</button>
             </Card>
         </li>
     );

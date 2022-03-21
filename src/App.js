@@ -10,13 +10,19 @@ function App() {
     setExpenseData((previousExpenses) => {
       return [newExpense, ...previousExpenses];
     });
-    console.log(newExpense);
+  }
+
+  function editExpenseTitle(expenseId, newTitle){
+    let updatedExpenses = expenseData.map(element => (
+      element.id === expenseId? {...element, title: newTitle}: element
+    ))
+    setExpenseData({ updatedExpenses });
   }
 
   return (
     <div>
         <NewExpense onAddNewExpense={addNewExpense}/>
-        <Expenses data={expenseData}/>
+        <Expenses data={expenseData} onEditExpenseTitle={editExpenseTitle}/>
     </div>
   );
 }
